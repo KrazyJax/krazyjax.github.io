@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jackson — Software Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<header class="intro">
+    <div class="wrap">
+        <h1>Jackson Granberg</h1>
+        <p class="contact">jacksongranberg@gmail.com  |  (310) 529 3425</p>
+        <p class="studentinfo">Computer Science Major @ University of California, Irvine<br />Expected Graduation June 2027</p>
+        <nav class="tabs" role="tablist">
+            <a class="tab-btn about-btn" href="index.html">About Me</a>
+            <button class="tab-btn is-active-tab" data-target="stalker" role="tab" aria-selected="true">The Stalker</button>
+            <button class="tab-btn" data-target="glorps-heist" role="tab" aria-selected="false">Glorp's Heist</button>
+            <button class="tab-btn" data-target="night-museum" role="tab" aria-selected="false">Night at the Museum</button>
+        </nav>
+    </div>
+</header>
+
+<main class="wrap">
+
+  <section id="projects">
+    <div class="project-stage">
+        
+        <article class="project pos-center is-active" id="stalker">
+            <div class="project-head">
+                <h2>The Stalker</h2>
+                <span class="status">in progress</span>
+            </div>
+            <p class="stack">Unity · C#</p>
+
+            <h4>Premise</h4>
+            <p>A narrative escape-room-style puzzle game, built as part of the Video Game Development Club.'</p>
+
+            <h4>Tools &amp; skills</h4>
+            <p>Unity, C#, interface-based design, abstract classes, singleton pattern.</p>
+
+            <h4>Responsibilites</h4>
+            <p>I'm the lead programmer, responsible not just for contributing my code, but also architecting and distributing weekly tasks to other programmers.</p>
+
+            <h4>Challenges</h4>
+            <p>The first iteration of the player interaction was simple, relying on tags on interactable objects to drive the system. However, once other scripts began using tags, the system broke down, since Unity doesn't allow multiple tags on a single object.'</p>
+            <p>The player collects and uses items throughout the game, and the item states and UI updates had to stay in sync across multiple scene loads.</p>
+
+            <h4>Solutions</h4>
+            <p>I refactored collision detection and the interaction system to be interface-based over tag-based, using colliders to build a live list of nearby interactables and resolving which one to interact with at runtime. Tag conflicts were eliminated.</p>
+            <p>I implemented the inventory around an abstract Item base class, allowing the core logic to remain consistent when presented with different items. A singleton manager persists the inventory state across scene loads, so the item states and UI elements stay consistent.</p>
+
+            <div class="links">
+                <a href="PASTE_STALKER_PLAY_LINK" class="link-placeholder">Play →</a>
+                <a href="PASTE_STALKER_GITHUB_LINK" class="link-placeholder">GitHub repo →</a>
+            </div>
+        </article>
+
+        <article class="project pos-left" id="glorps-heist">
+            <div class="project-head">
+                <h2>Glorp's Heist</h2>
+                <span class="status">1st place — game jam</span>
+            </div>
+            <p class="stack">Unity · C#</p>
+
+            <h4>Premise</h4>
+            <p>A guard-patrol puzzle game where players navigate around guards walking fixed paths, timing their movement to stay out of sight.</p>
+
+            <h4>Tools &amp; skills</h4>
+            <p>Unity, C#, vision/detection systems, raycasts, modular tooling, working under time pressure.</p>
+
+            <h4>Challenges</h4>
+            <p>As a game jam project, we had very little time to spend on level design itself. Hardcoding guard behaviour for each level would make code refinements time-consuming, so more modularity was needed.</p>
+            <p>The modularity of the guard patrols caused a second issue with guard vision. The vision cones needed to update in real-time to create responsive, fair gameplay.</p>
+
+            <h4>Solutions</h4>
+            <p>I architected the guard patrol system like a level editor, allowing for quick on-the-fly adjustments to paths and timings. It funtions through the Unity inspector, allowing for modifications without touching the code, allowing for rapid iterations.</p>
+            <p>To keep vision cones accurate against changing geometry, I used raycasts and colliders to allow for live updates and detection.</p>
+
+            <div class="links">
+                <a href="https://becxah.itch.io/glorps-heist" class="link-placeholder">Play →</a>
+                <a href="PASTE_GLORPS_HEIST_GITHUB_LINK" class="link-placeholder">GitHub repo →</a>
+            </div>
+        </article>
+
+    <article class="project pos-left" id="night-museum">
+        <div class="project-head">
+            <h2>Night at the White House</h2>
+            <span class="status">finished — game jam</span>
+        </div>
+        <p class="stack">Unity · C#</p>
+
+        <h4>Premise</h4>
+        <p>A trash-collecting endless roguelike where players clear rooms to earn trash, buy upgrades, and eventually win.</p>
+
+        <h4>Tools &amp; skills</h4>
+        <p>Unity, C#, procedural generation, minigame design, texture maps, mouse tracking</p>
+
+        <h4>Challenges</h4>
+        <p>One room would get boring fast, so we needed rooms that felt different on different runs to keep gameplay fresh.</p>
+        <p>One of our minigames involved wiping dirt off a picture frame, and I had no starting point, so I needed to learn how to implement this feature.</p>
+
+        <h4>Solutions</h4>
+        <p>I built three distinct room layouts, which then had randomized trash and trap spawns within a specific areas over a collider.</p>
+        <p>To cause the effect of cleaning dirt, I created a dirty render texture, which the player then paints onto using mouse tracking with a texture mask, revealing the sprite underneath.</p>
+
+        <div class="links">
+            <a href="https://becxah.itch.io/night-at-the-white-house" class="link-placeholder">Play →</a>
+            <a href="PASTE_MUSEUM_GITHUB_LINK" class="link-placeholder">GitHub repo →</a>
+        </div>
+    </article>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-label">Skills</h2>
+    <div class="skills-grid">
+      <div class="skills-col">
+        <h4>Languages</h4>
+        <p>C# · C++ · MySQL</p>
+      </div>
+      <div class="skills-col">
+        <h4>Engines &amp; Tools</h4>
+        <p>Unity · Git · CMake</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-label">Contact</h2>
+    <p class="contact-line">
+        <a href="mailto:jacksongranberg@gmail.com">jacksongranberg@gmail.com</a>
+      <span class="sep">·</span>
+      <a href="https://github.com/krazyjax">GitHub</a>
+      <span class="sep">·</span>
+      <a href="https://linkedin.com/in/jackson-granberg-7b9085273">LinkedIn</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <p>Built with GitHub Pages.</p>
+</footer>
+
+<script>
+(function () {
+  var tabs = document.querySelectorAll('.tab-btn');
+  var stage = document.querySelector('.project-stage');
+
+  function switchTo(id) {
+    var next = stage.querySelector('#' + id);
+    var current = stage.querySelector('.project.is-active');
+    if (!next || next === current) return;
+
+    if (current) {
+      current.classList.remove('is-active', 'pos-center', 'pos-right');
+      current.classList.add('pos-left');
+      current.setAttribute('aria-hidden', 'true');
+    }
+
+    // Snap the incoming panel to the right, instantly, before animating in.
+    next.classList.add('no-transition', 'pos-right');
+    next.classList.remove('pos-left', 'pos-center');
+    void next.offsetWidth; // force reflow so the snap registers before we transition
+    next.classList.remove('no-transition');
+    next.removeAttribute('aria-hidden');
+
+    requestAnimationFrame(function () {
+      next.classList.remove('pos-right');
+      next.classList.add('pos-center', 'is-active');
+    });
+
+    tabs.forEach(function (btn) {
+      var isTarget = btn.dataset.target === id;
+      btn.classList.toggle('is-active-tab', isTarget);
+      btn.setAttribute('aria-selected', isTarget);
+    });
+  }
+
+  tabs.forEach(function (btn) {
+    if (!btn.dataset.target) return;
+    btn.addEventListener('click', function () {
+      switchTo(btn.dataset.target);
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
