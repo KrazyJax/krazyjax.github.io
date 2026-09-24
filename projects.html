@@ -46,17 +46,15 @@
             <p>Unity, C#, interface-based design, abstract classes, singleton pattern.</p>
 
             <h4>Responsibilites</h4>
-            <p>As the lead programmer, my responsibilities included contributing my code, designing the software architecture, assigning weekly tasks, and holding the other programmers accountable through weekly check-ins</p>
+            <p>As the lead programmer, my responsibilities included contributing my code, designing the software architecture, assigning weekly tasks, and holding the other programmers accountable through weekly check-ins.</p>
 
             <h4>Challenges</h4>
             <p>The first iteration of the player interaction was simple, relying on tags on interactable objects to drive the system. However, once other scripts began using tags, the system broke down, since Unity doesn't allow multiple tags on a single object.</p>
             <p>The player collects and uses items throughout the game, and the item states and UI updates had to stay in sync across multiple scene loads.</p>
-            <p>Over the first few months of the development cycle, each programmer had a unique way of handling different items and puzzle flows, which resulted in unnecessary scripts and repeated code across different scripts. This system was not sustainable once the project got larger, and special cases meant some features were hardcoded in, bloating down the interaction system.</p>
 
             <h4>Solutions</h4>
             <p>I refactored collision detection and the interaction system to be interface-based over tag-based, using colliders to build a live list of nearby interactables and resolving which one to interact with at runtime. Tag conflicts were eliminated.</p>
             <p>I implemented the inventory around an abstract Item base class, allowing the core logic to remain consistent when presented with different items. A singleton manager maintains a persistent inventory across scene loads, so the item states and UI elements stay consistent.</p>
-            <p>I implemented a puzzle framework using interfaces and used child classes to create a more streamlined implementation. That way, similar puzzles can reuse code, and the interaction system doesn't have to handle any special cases. improving efficiency both on the back- and frontend.</p>
 
             <div class="links">
                 <a href="PASTE_STALKER_PLAY_LINK" class="link-placeholder">Play →</a>
@@ -75,7 +73,7 @@
             <p>A guard-patrol puzzle game where players navigate around guards walking fixed paths, timing their movement to stay out of sight.</p>
 
             <h4>Tools &amp; skills</h4>
-            <p>Unity, C#, vision/detection systems, raycasts, modular tooling, working under time pressure</p>
+            <p>Unity, C#, vision/detection systems, raycasts, modular tooling, working under time pressure.</p>
 
             <h4>Challenges</h4>
             <p>As a game jam project, we had very little time to spend on level design itself. Hardcoding guard behaviour for each level would make code refinements time-consuming, so more modularity was needed.</p>
@@ -102,7 +100,7 @@
         <p>A trash-collecting endless roguelike where players clear rooms to earn trash, buy upgrades, and eventually win.</p>
 
         <h4>Tools &amp; skills</h4>
-        <p>Unity, C#, procedural generation, minigame design, texture maps, mouse tracking, working under time pressure</p>
+        <p>Unity, C#, procedural generation, minigame design, texture maps, mouse tracking</p>
 
         <h4>Challenges</h4>
         <p>Using a single lacked novelty for the user and would've gotten stale fast, so we needed rooms that felt different on different runs to keep gameplay fresh.</p>
