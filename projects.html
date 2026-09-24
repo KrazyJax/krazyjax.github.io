@@ -58,7 +58,7 @@
 
             <div class="links">
                 <a href="PASTE_STALKER_PLAY_LINK" class="link-placeholder">Play →</a>
-                <a href="PASTE_STALKER_GITHUB_LINK" class="link-placeholder">GitHub repo →</a>
+                <a href="https://github.com/KrazyJax/The-Stalker-Source-Code" class="link-placeholder">GitHub repo →</a>
             </div>
         </article>
 
@@ -107,7 +107,7 @@
         <p>One of our minigames involved wiping dirt off a picture frame. Having no starting point, so I needed to learn how to implement this feature.</p>
 
         <h4>Solutions</h4>
-        <p>I built three distinct room layouts, which then had randomized trash and trap spawns within specific areas over a collider.</p>
+        <p>I built three distinct room layouts, which then had randomized trash and trap spawns within specific areas over a collider. Rooms are randomized following a seed, and the map of all rooms is tracked using hashmaps and a registry script, to ensure fast runtime even in longer playthroughs.</p>
         <p>To cause the effect of cleaning dirt, I created a dirty render texture, which the player then paints onto using mouse tracking with a texture mask, revealing the sprite underneath.</p>
 
         <div class="links">
