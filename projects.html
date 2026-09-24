@@ -51,10 +51,12 @@
             <h4>Challenges</h4>
             <p>The first iteration of the player interaction was simple, relying on tags on interactable objects to drive the system. However, once other scripts began using tags, the system broke down, since Unity doesn't allow multiple tags on a single object.</p>
             <p>The player collects and uses items throughout the game, and the item states and UI updates had to stay in sync across multiple scene loads.</p>
+            <p>Over the first few months of the development cycle, each programmer had a unique way of handling different items and puzzle flows, which resulted in unnecessary scripts and repeated code across different scripts. This system was not sustainable once the project got larger, and special cases meant some features were hardcoded in, bloating down the interaction system.</p>
 
             <h4>Solutions</h4>
             <p>I refactored collision detection and the interaction system to be interface-based over tag-based, using colliders to build a live list of nearby interactables and resolving which one to interact with at runtime. Tag conflicts were eliminated.</p>
             <p>I implemented the inventory around an abstract Item base class, allowing the core logic to remain consistent when presented with different items. A singleton manager maintains a persistent inventory across scene loads, so the item states and UI elements stay consistent.</p>
+            <p>I implemented a puzzle framework using interfaces and used child classes to create a more streamlined implementation. That way, similar puzzles can reuse code, and the interaction system doesn't have to handle any special cases. improving efficiency both on the back- and frontend.</p>
 
             <div class="links">
                 <a href="PASTE_STALKER_PLAY_LINK" class="link-placeholder">Play →</a>
